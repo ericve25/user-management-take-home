@@ -5,7 +5,7 @@ const formatMessage = (message, level, err) => {
   if (err) {
     errorPostpend = `(${err.message ? err.message : err})`;
   }
-  return `${new Date().toISOString()} [${level}] ${message}${errorPostpend}`;
+  return `${new Date().toISOString()} [${level.toUpperCase()}] ${message}${errorPostpend}`;
 };
 
 const error = (message, err) => {
