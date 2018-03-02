@@ -18,34 +18,34 @@ This API uses PostgreSQL as it's persistent storage.
 
 1. NodeJS can be installed however you wish:  [homebrew](http://brew.sh/), [n](https://github.com/tj/n), or directly from the [NodeJS website](https://nodejs.org/en/).  This documentation uses [nvm](https://github.com/creationix/nvm) to switch between NodeJS versions.
     - Install nvm with curl
-    ```bash
+    ```
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
     ```
     - Reload your .bash_profile or .bashrc and verify your installation of nvm
-    ```bash
+    ```
     source ~/.bash_profile & nvm --version
     ```
     Output of nvm version number indicates nvm has successfully been installed.
     - Install latest version of node with nvm
-    ```bash
+    ```
     nvm install node
     ```
 
 1. Clone the repo
 
-    ```bash
-    git clone 
+    ```
+    git clone https://bitbucket.org/ericve25/rednote-take-home
     ```
 
-1. Copy .env.example to .env (and customize values to your needs)
+1. Copy .env.example to .env and customize values to your needs
 
-   ```bash
-   cp .env.example .env
-   ```
+    ```
+    cp .env.example .env
+    ```
 
 1. Install Dependencies
 
-    ```bash
+    ```
     npm install
     ```
 
@@ -53,13 +53,13 @@ This API uses PostgreSQL as it's persistent storage.
     
     This will create a database named 'contacts_app' for you.
 
-    ```bash
+    ```
     node scripts/initDB.js
     ```
 
 1. Start the API
 
-    ```bash
+    ```
     npm start
     ```
 
@@ -67,7 +67,7 @@ This API uses PostgreSQL as it's persistent storage.
 
 Run linter to validate code style (using a modified version of the AirBnB style guide)
 
-```bash
+```
 npm run lint
 ```
 
@@ -75,7 +75,7 @@ npm run lint
 
 Run unit tests with code coverage or run with debugging
 
-```bash
+```
 npm run test
 npm run test-debug
 ```
@@ -86,7 +86,7 @@ npm run test-debug
 
 Options to run using dotenv to load env vars and with debugging
 
-```bash
+```
 npm run dev
 npm run dev-debug
 ```
@@ -95,7 +95,7 @@ npm run dev-debug
 
 Cleans up all .gitignored files (*must be called with 'npm run'*)
 
-```bash
+```
 npm run clean
 ```
 
