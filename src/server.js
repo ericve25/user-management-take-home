@@ -1,14 +1,19 @@
 const express = require('express');
-const router = require('./routes');
 const config = require('./config');
 const logger = require('./logger');
+const db = require('./db');
+// Initialize db connection and models
+db.init();
 
+// Build express with router
+const router = require('./routes');
 const app = express();
 app.use(router);
 
+// Start API
 app.listen(config.SERVICE_PORT, config.SERVICE_HOST, error => {
   if (error) {
-    logger.error('Service shutdown due to an error', error);
+    logger.error('API shutdown due to an error', error);
     process.exit(1);
   }
 

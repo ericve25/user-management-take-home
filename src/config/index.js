@@ -8,7 +8,8 @@ module.exports = {
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || '5432',
     database: process.env.DB_NAME || 'contacts_app',
-    dialect: 'postgres'
+    dialect: 'postgres',
+    logging: false
   },
   NODE_ENV: (process.env.NODE_ENV || 'production').toLowerCase(),
   LOG_LEVEL: (process.env.LOG_LEVEL || 'info').toLowerCase(),

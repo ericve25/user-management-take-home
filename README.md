@@ -101,7 +101,7 @@ npm run clean
 
 ## Documentation
 
-Documentation for this API is contained here in the README.
+Documentation for this API is contained here in the README. Please visit the API root route for list of endpoints.
 
 (Note: in a production setting, I would add hosted docs generated from markdown with a static site generator such as Hugo)
 
