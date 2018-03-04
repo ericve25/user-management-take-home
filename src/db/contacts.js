@@ -1,15 +1,10 @@
 const db = require('./index');
 
 const getContactsByUserId = async userId =>
-  db.models.user.findOne({
+  db.models.contact.findAll({
     where: {
-      id: userId
-    },
-    include: [
-      {
-        model: db.models.contact
-      }
-    ]
+      userId: userId
+    }
   });
 
 const createContactForUser = async data =>
@@ -18,7 +13,7 @@ const createContactForUser = async data =>
 const getContactById = async contactId =>
   db.models.contact.findOne({ where: { id: contactId } });
 
-const updateContactById = async(contactId, data) => {
+const updateContactById = async (contactId, data) => {
   const result = await db.models.contact.findOne({ where: { id: contactId } });
   if (!result) {
     throw new Error('Contact not found');
