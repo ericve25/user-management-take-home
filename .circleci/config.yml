@@ -32,3 +32,9 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+  
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: rednote-take-home
