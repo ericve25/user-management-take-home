@@ -107,7 +107,7 @@ Documentation for this API is contained here in the README. Please visit the API
 
 ## Deployment
 
-API has been deployed to Heroku and is publicly available at: http://rednote-take-home.herokuapp.com:5008/
+API has been deployed to Heroku and is publicly available at: http://rednote-take-home.herokuapp.com/
 
 (Note: in a production setting, I would add CI monitoring to all branches to support status checks before merging branches to master and automatic deployment of specified branches to testing servers plus triggered deployment of master for production)
 
