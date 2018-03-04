@@ -16,9 +16,9 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-  const token = await login(req.body);
-  if (token) {
-    res.send(token);
+  const user = await login(req.body);
+  if (user) {
+    res.send(user);
   } else {
     res.sendStatus(401);
   }

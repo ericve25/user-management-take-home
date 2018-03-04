@@ -21,11 +21,14 @@ const register = async (body) => {
 
 const login = async (body) => {
   const user = await getUserByEmailPassword(body.email, body.password);
-  let token;
+  let result;
   if (user) {
-    token = jwt.sign({ userId: user.id }, config.JWT_SECRET);
+    result = {
+      userId: user.id,
+      token: jwt.sign({ userId: user.id }, config.JWT_SECRET)
+    };
   }
-  return token;
+  return result;
 };
 
 const getContactsForUser = async (id) => {
