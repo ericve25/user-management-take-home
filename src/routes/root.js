@@ -1,15 +1,16 @@
 const router = require('express').Router();
+const { wrap } = require('../utils/error');
 const {
   getRoutes,
   getHealth
 } = require('../handlers/root');
 
-router.get('/', (req, res) => {
+router.get('/', wrap((req, res) => {
   res.send(getRoutes());
-});
+}));
 
-router.get('/health', (req, res) => {
+router.get('/health', wrap((req, res) => {
   res.send(getHealth());
-});
+}));
 
 module.exports = router;

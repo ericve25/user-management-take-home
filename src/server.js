@@ -8,6 +8,7 @@ db.init();
 
 // Build express with router
 const router = require('./routes');
+const { errorMiddleware } = require('./utils/error');
 const app = express();
 app.use(jwt({ secret: config.JWT_SECRET })
   .unless({ path: [
@@ -17,6 +18,7 @@ app.use(jwt({ secret: config.JWT_SECRET })
     '/users/login'
   ] }));
 app.use(router);
+app.use(errorMiddleware);
 
 // Start API
 app.listen(config.SERVICE_PORT, config.SERVICE_HOST, error => {
