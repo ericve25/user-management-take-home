@@ -107,15 +107,15 @@ Documentation for this API is contained here in the README. Please visit the API
 
 ## Deployment
 
-Repo master branch will be monitored and automatically built by CircleCI, executing the test cases and deploying to AWS.
+API has been deployed to Heroku and is publicly available at: http://rednote-take-home.herokuapp.com:5008/
 
-(Note: in a production setting, I would add CI monitoring to all branches to support status checks before merging branches to master and automatic deployment of specified branches to testing servers)
+(Note: in a production setting, I would add CI monitoring to all branches to support status checks before merging branches to master and automatic deployment of specified branches to testing servers plus triggered deployment of master for production)
 
-## Authorization
+## Authentication
 
-This API uses JWT to secure its endpoints and provide authorization for a given user. The `/register` endpoint provides the JWT on registration, and the `/login` endpoint provides JWT when correct credentials are provided.
+This API uses JWT to secure its endpoints and provide authentication and authorization for a given user. The `/register` endpoint provides the JWT on registration, and the `/login` endpoint provides JWT when correct credentials are provided.
 
-(Note: due to the time constraint of a tech assessment, only very basic authorization has been implemented and JWT are not set to expire)
+(Note: due to the time constraint of a tech assessment, only very basic authorization has been implemented and JWT are not set to expire. Also, passwords are not salted/hashed in any way before storing. This is obviously bad practice as well and passwords would be stored encrypted in any non time constrained environment)
 
 ## Principles
 
