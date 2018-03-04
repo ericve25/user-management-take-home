@@ -73,14 +73,14 @@ npm run lint
 
 ## Testing
 
-Run unit tests with code coverage or run with debugging
+Run unit tests with code coverage or run with debugging.
 
 ```
 npm run test
 npm run test-debug
 ```
 
-(Note: in a production setting, other tests suites such as integration tests or acceptance tests could be added as well)
+(Note: due to time constraints I ended up not including any tests at this point. Unit, integration, and acceptance tests could be added)
 
 ## Development
 
