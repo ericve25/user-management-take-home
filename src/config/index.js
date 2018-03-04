@@ -18,5 +18,6 @@ module.exports = {
     WARN: 'warn',
     INFO: 'info',
     DEBUG: 'debug'
-  }
+  },
+  JWT_SECRET: process.env.JWT_SECRET || ''
 };

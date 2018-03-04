@@ -111,6 +111,12 @@ Repo master branch will be monitored and automatically built by CircleCI, execut
 
 (Note: in a production setting, I would add CI monitoring to all branches to support status checks before merging branches to master and automatic deployment of specified branches to testing servers)
 
+## Authorization
+
+This API uses JWT to secure the endpoints and provide authorization for a given user. The `/register` endpoint provides the JWT on registration, and the `/login` endpoint provides JWT when correct credentials are provided.
+
+(Note: due to the time constraint of a tech assessment, only basic authorization has been implemented and JWT are not set to expire)
+
 ## Principles
 
 This solution generally tries to follow the principles found in the [12-Factor App](https://12factor.net/) method. Some elements have not been addressed due to the time-constrained nature of a tech-assessment.

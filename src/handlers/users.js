@@ -10,16 +10,21 @@ const {
   updateContactById,
   deleteContactById
 } = require('../db/contacts');
+const jwt = require('jsonwebtoken');
+const config = require('../config');
 
 const register = async (body) => {
-  await createUser(body);
-  // TODO: generate token to return
-  const token = {};
+  const user = await createUser(body);
+  const token = jwt.sign({ userId: user.id }, config.JWT_SECRET);
   return token;
 };
 
 const login = async (body) => {
-  const token = await getUserByEmailPassword(body.email, body.password);
+  const user = await getUserByEmailPassword(body.email, body.password);
+  let token;
+  if (user) {
+    token = jwt.sign({ userId: user.id }, config.JWT_SECRET);
+  }
   return token;
 };
 

@@ -44,7 +44,7 @@ const initDatabase = (db, options) => {
     .catch(err => {
       logger.error('Authentication failed', err);
     });
-  };
+};
 
 const db = {};
 db.sequelize = new Sequelize(
@@ -55,8 +55,6 @@ db.sequelize = new Sequelize(
 );
 db.models = initModels(db);
 
-db.init = (options = { syncForce: false }) => {
-  return initDatabase(db, options);
-};
+db.init = (options = { syncForce: false }) => initDatabase(db, options);
 
 module.exports = db;

@@ -1,4 +1,5 @@
 const express = require('express');
+const jwt = require('express-jwt');
 const config = require('./config');
 const logger = require('./logger');
 const db = require('./db');
@@ -8,6 +9,7 @@ db.init();
 // Build express with router
 const router = require('./routes');
 const app = express();
+app.use(jwt({ secret: config.JWT_SECRET }).unless({ path: ['/users/register', '/users/login'] }));
 app.use(router);
 
 // Start API

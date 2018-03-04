@@ -15,10 +15,10 @@ const getContactsByUserId = async userId =>
 const createContactForUser = async data =>
   db.models.contact.create(data);
 
-const getContactById = async contact_id => 
+const getContactById = async contact_id =>
   db.models.contact.findOne({ where: { id: contact_id } });
 
-const updateContactById = async (contact_id, data) => {
+const updateContactById = async(contact_id, data) => {
   const result = await db.models.contact.findOne({ where: { id: contact_id } });
   if (!result) {
     throw new Error('Contact not found');
@@ -26,8 +26,8 @@ const updateContactById = async (contact_id, data) => {
 
   return result.update(data);
 };
-  
-const deleteContactById = async contact_id => 
+
+const deleteContactById = async contact_id =>
   db.models.contact.destroy({ where: { id: contact_id } });
 
 module.exports = {
