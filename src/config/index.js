@@ -1,7 +1,7 @@
 // Pulls app config from process env vars and sets default values if not present
 module.exports = {
   SERVICE_HOST: process.env.SERVICE_HOST || 'localhost',
-  SERVICE_PORT: process.env.SERVICE_PORT || 5001,
+  SERVICE_PORT: process.env.PORT || process.env.SERVICE_PORT || 5000,
   DB: {
     user: process.env.DB_USER || '',
     password: process.env.DB_PASS || '',
