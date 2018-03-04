@@ -1,6 +1,6 @@
 const {
   createUser,
-  getUserByEmailPassword
+  getUserByEmail
 } = require('../db/users');
 
 const {
@@ -12,17 +12,21 @@ const {
 } = require('../db/contacts');
 const jwt = require('jsonwebtoken');
 const config = require('../config');
+const bcrypt = require('bcrypt');
 
 const register = async (body) => {
+  const securePassword = await bcrypt.hash(body.password, 10);
+  body.password = securePassword;
   const user = await createUser(body);
   const token = jwt.sign({ userId: user.id }, config.JWT_SECRET);
   return token;
 };
 
 const login = async (body) => {
-  const user = await getUserByEmailPassword(body.email, body.password);
+  const user = await getUserByEmail(body.email);
+  const valid = await bcrypt.compare(body.password, user.password);
   let result;
-  if (user) {
+  if (valid) {
     result = {
       userId: user.id,
       token: jwt.sign({ userId: user.id }, config.JWT_SECRET)

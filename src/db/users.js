@@ -5,11 +5,10 @@ const createUser = async data => {
   return user;
 };
 
-const getUserByEmailPassword = async(email, password) => {
+const getUserByEmail = async(email) => {
   const user = await db.models.user.findOne({
     where: {
-      email,
-      password
+      email
     }
   });
   return user;
@@ -17,5 +16,5 @@ const getUserByEmailPassword = async(email, password) => {
 
 module.exports = {
   createUser,
-  getUserByEmailPassword
+  getUserByEmail
 };
