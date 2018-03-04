@@ -36,18 +36,18 @@ router.post('/:id/contacts', async (req, res) => {
   res.send(contact);
 });
 
-router.get('/:id/contacts/:contactId', async (req, res) => {
-  res.send(await getSingleContact(req.params.id, req.params.contactId));
+router.get('/:id/contacts/:contact_id', async (req, res) => {
+  res.send(await getSingleContact(req.params.contact_id));
 });
 
-router.put('/:id/contacts/:contactId', async (req, res) => {
-  await updateContact(req.params.id, req.params.contactId);
+router.put('/:id/contacts/:contact_id', async (req, res) => {
+  await updateContact(req.params.contact_id, req.body);
   res.status(204);
   res.send();
 });
 
-router.delete('/:id/contacts/:contactId', async (req, res) => {
-  await deleteContact(req.params.id, req.params.contactId);
+router.delete('/:id/contacts/:contact_id', async (req, res) => {
+  await deleteContact(req.params.contact_id);
   res.status(204);
   res.send();
 });
