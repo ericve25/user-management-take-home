@@ -1,6 +1,6 @@
 const db = require('./index');
 
-const getContactsForUser = async userId =>
+const getContactsByUserId = async userId =>
   db.models.user.findOne({
     where: {
       id: userId
@@ -31,7 +31,7 @@ const deleteContactById = async contactId =>
   db.models.contact.destroy({ where: { id: contactId } });
 
 module.exports = {
-  getContactsForUser,
+  getContactsByUserId,
   createContactForUser,
   getContactById,
   updateContactById,

@@ -5,6 +5,6 @@ const users = require('./users');
 
 router.use(bodyParser.json({ limit: '50mb', type: 'application/json' }));
 router.use(root);
-//router.use('/users', users);
+router.use('/users', users);
 
 module.exports = router;
