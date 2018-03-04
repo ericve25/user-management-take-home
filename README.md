@@ -115,7 +115,7 @@ Repo master branch will be monitored and automatically built by CircleCI, execut
 
 This API uses JWT to secure its endpoints and provide authorization for a given user. The `/register` endpoint provides the JWT on registration, and the `/login` endpoint provides JWT when correct credentials are provided.
 
-(Note: due to the time constraint of a tech assessment, only basic authorization has been implemented and JWT are not set to expire)
+(Note: due to the time constraint of a tech assessment, only very basic authorization has been implemented and JWT are not set to expire)
 
 ## Principles
 
