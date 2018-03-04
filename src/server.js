@@ -9,7 +9,13 @@ db.init();
 // Build express with router
 const router = require('./routes');
 const app = express();
-app.use(jwt({ secret: config.JWT_SECRET }).unless({ path: ['/users/register', '/users/login'] }));
+app.use(jwt({ secret: config.JWT_SECRET })
+  .unless({ path: [
+    '/',
+    '/health',
+    '/users/register', 
+    '/users/login'
+  ] }));
 app.use(router);
 
 // Start API
