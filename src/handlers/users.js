@@ -36,8 +36,8 @@ const getContactsForUser = async (id) => {
   return contacts;
 };
 
-const getSingleContact =  async (contact_id) => {
-  const contact = await getContactById(contact_id);
+const getSingleContact =  async (contactId) => {
+  const contact = await getContactById(contactId);
   return contact;
 };
 
@@ -50,12 +50,12 @@ const createContact = async (id, body) => {
   return contact;
 };
 
-const updateContact = async (contact_id, data) => {
-  await updateContactById(contact_id, data);
+const updateContact = async (contactId, data) => {
+  await updateContactById(contactId, data);
 };
 
-const deleteContact = async (contact_id) => {
-  await deleteContactById(contact_id);
+const deleteContact = async (contactId) => {
+  await deleteContactById(contactId);
 };
 
 module.exports = {
