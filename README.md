@@ -103,19 +103,19 @@ npm run clean
 
 Documentation for this API is contained here in the README. Please visit the API root route for list of endpoints.
 
-(Note: in a production setting, I would add hosted docs generated from markdown with a static site generator such as Hugo)
+(Note: in a production setting, I would add hosted docs generated from markdown with a static site generator such as Hugo.)
 
 ## Deployment
 
-API has been deployed to Heroku and is publicly available at: http://rednote-take-home.herokuapp.com/
+API is not currently deployed, but can be for reference upon request.
 
-(Note: in a production setting, I would add CI monitoring to all branches to support status checks before merging branches to master and automatic deployment of specified branches to testing servers plus triggered deployment of master for production)
+(Note: in a production setting, I would add CI monitoring to all branches to support status checks before merging branches to master and automatic deployment of specified branches to testing servers plus triggered deployment of master for production.)
 
 ## Authentication
 
 This API uses JWT to secure its endpoints and provide authentication and authorization for a given user. The `/register` endpoint provides the JWT on registration, and the `/login` endpoint provides JWT when correct credentials are provided.
 
-(Note: due to the time constraint of a tech assessment, only very basic authorization has been implemented and JWT are not set to expire. Also, passwords are not salted/hashed in any way before storing. This is obviously bad practice as well and passwords would be stored encrypted in any non time constrained environment)
+(Note: due to the time constraint of a tech assessment, only very basic authorization has been implemented and JWT are not set to expire. This is obviously bad practice and would be fixed in a non time constrained environment.)
 
 ## Principles
 
