@@ -1,6 +1,6 @@
 # rednote-take-home
 
-This project contains a small API to provide user registration and contact management.
+This project contains a small API to provide user registration and contact management. Please see  Project-Instructions.pdf for the original directions.
 
 ## Prerequisites
 
