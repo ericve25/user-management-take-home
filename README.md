@@ -1,4 +1,4 @@
-# rednote-take-home
+# user-management-take-home
 
 This project contains a small API to provide user registration and contact management. Please see  Project-Instructions.pdf for the original directions.
 
@@ -34,7 +34,7 @@ This API uses PostgreSQL as it's persistent storage.
 1. Clone the repo
 
     ```
-    git clone https://bitbucket.org/ericve25/rednote-take-home
+    git clone https://github.com/ericve25/user-management-take-home.git
     ```
 
 1. Copy .env.example to .env and customize values to your needs
