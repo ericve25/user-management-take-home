@@ -17,7 +17,7 @@ const getRoutes = () => [
     href: '/users/register',
     methods: 'post',
     type: packageJson.version,
-    description: 'Allows users to login with email and password'
+    description: 'Allows users to register with email and password'
   },
   {
     href: '/users/login',
