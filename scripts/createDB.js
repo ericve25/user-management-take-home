@@ -1,18 +1,19 @@
-const pg = require('pg');
+const { Client } = require('pg');
 const config = require('../src/config');
 const logger = require('../src/logger');
-
-// Create a pool
-const pool = new pg.Pool({
+const client = new Client({
   user: config.DB.user,
   password: config.DB.password,
   host: config.DB.host,
   database: 'postgres'
 });
+client.connect()
+  .then(() => logger.info('DB connected'))
+  .catch(e => logger.error('DB connection error', e.stack));
 
-pool.query(`CREATE DATABASE ${config.DB.database}`, err => {
+client.query(`CREATE DATABASE ${config.DB.database}`, err => {
   if (err) {
     logger.error('Failed to create database', err);
   }
-  pool.end();
+  client.end();
 });
