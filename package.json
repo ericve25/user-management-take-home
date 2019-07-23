@@ -33,7 +33,6 @@
     "dev": "node -r dotenv/config ./src/server.js",
     "dev-debug": "node -r dotenv/config --inspect=5858 --debug-brk ./src/server.js",
     "init-db": "node -r dotenv/config scripts/createDB.js",
-    "clean-db": "node -r dotenv/config scripts/cleanDB.js",
     "lint": "eslint --color --ext .js .",
     "lint-fix": "npm run lint -- --fix",
     "test": "nyc mocha 'src/**/*test.js'",
