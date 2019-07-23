@@ -54,7 +54,7 @@ This API uses PostgreSQL as it's persistent storage.
     This will create a database named 'contacts_app' for you.
 
     ```
-    node scripts/initDB.js
+    node scripts/createDB.js
     ```
 
 1. Start the API
